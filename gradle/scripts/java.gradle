@@ -1,0 +1,8 @@
+apply plugin: 'java'
+
+tasks.withType(JavaCompile) {
+  sourceCompatibility = project['java.lang.level']
+  targetCompatibility = project['java.lang.level']
+  options.encoding = project['file.encoding']
+  options.compilerArgs << '-Xlint:all' << '-Xlint:-processing' << '-Xlint:-try' << '-Xlint:-serial' << '-Xlint:-classfile' << '-Werror'
+}
